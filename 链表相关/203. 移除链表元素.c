@@ -28,6 +28,8 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 struct ListNode* removeElements(struct ListNode* head, int val) {
     // val=0
     // next = head
+    // 这里dummy是一个结构体而不是指针，只是它指向的是指针
+    // 因此去往下一个结点的时候需要dummy.next(结构体)而不是dummy->next(指针)
     struct ListNode dummy = {0, head};
     struct ListNode* cur = &dummy;
     while (cur->next){
